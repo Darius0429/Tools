@@ -27,8 +27,8 @@ class TransformerEncoderLayer(nn.Module):
         cm: int = 2048,
         num_heads: int = 8,
         dropout: float = 0.0,
-        act: nn.Module = nn.GELU(),
         normalize_before: bool = False,
+        act: nn.Module = nn.GELU(),
     ):
         """Initialize the TransformerEncoderLayer with specified parameters.
 
@@ -133,6 +133,7 @@ class TransformerEncoderLayer(nn.Module):
         if self.normalize_before:
             return self.forward_pre(src, src_mask, src_key_padding_mask, pos)
         return self.forward_post(src, src_mask, src_key_padding_mask, pos)
+
 
 def drop_path(x, drop_prob: float = 0.0, training: bool = False):
     """Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).

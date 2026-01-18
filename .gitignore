@@ -1,0 +1,3 @@
+# Ignore poetry.lock files
+poetry.lock
+# Ignore __pypackages__ directories
